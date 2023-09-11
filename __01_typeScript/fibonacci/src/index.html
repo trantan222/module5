@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // const sum = (a, b) => a + b;
+    // console.log(sum(2, 2))
+    // const logg = log => console.log(log);
+    // logg("tan")
+    // const object = (a, b) => ({a: a, b: b})
+    // console.log(object(2, 4))
+    // const index = (name) => {
+    //     return console.log(name)
+    // }
+    // index("tannn")
+
+    const student = {
+        name: "tan",
+        age: "21",
+        getName: function () {
+            return this.name  // context
+        },
+        getAge: function () {
+            return this.age
+        }
+    }
+    console.log(student.getAge())
+    console.log(student.getName())
+    console.log(student)
+
+    const student1 = function (name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    const studentjs = new student1("tan",19)
+    console.log(studentjs)
+
+</script>
+</body>
+</html>
