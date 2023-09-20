@@ -2,10 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import {useEffect, useState} from 'react'
 
-const carList = ['MayBach S680', 'Mescerdes S600', 'Lexus ES Sport ']
-const colorList = ['White', 'Black', 'blue']
+
 
 function Component() {
+    const carList = ['MayBach S680', 'Mescerdes S600', 'Lexus ES Sport ']
+    const colorList = ['White', 'Black', 'blue']
     let [selectedCar, setSelectedCar] = useState({
             car: carList[0],
             color: colorList[0]
