@@ -1,9 +1,9 @@
-import {useState} from "react";
+
 import * as Yup from 'yup'
 import {ErrorMessage, Field, Form, Formik} from 'formik'
 import {Dna} from "react-loader-spinner";
 
-export default function form() {
+export  function Medicine() {
     return (
         <>
             <Formik
@@ -20,46 +20,28 @@ export default function form() {
                     district: '',
                     society: '',
                     address : '',
-                    phonenumber: '',
+                    phone: '',
                     email: '',
                     feel: '',
                     strong: '',
 
                 }}
                 validationSchema={Yup.object({
-                    name: Yup.string
-                        .require('required'),
-                    date : Yup.number
-                        .require('required')
-                        .min(1900),
-                    country : Yup.string
-                        .require('required'),
-                    city : Yup.string
-                        .require('required'),
-                    district : Yup.string
-                        .require('required'),
-                    society : Yup.string
-                        .require('required'),
-                    address : Yup.string
-                        .require('required'),
-                    phonenumber : Yup.number
-                        .require('required'),
-                    email : Yup.string
-                        .require('required')
-                        .matches('/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$','Hiển thị lỗi “Invalid email address” nếu không đúng format sau:')
-
+                    name: Yup.string().required("Name not empty"),
+                    id: Yup.number().required("CMND not empty"),
+                    date: Yup.number().required("Birth Year not empty").min(1900),
+                    country: Yup.string().required("International not empty"),
+                    district: Yup.string().required("Province not empty"),
+                    society: Yup.string().required("District not empty"),
+                    address: Yup.string().required("Wards not empty"),
+                    phone: Yup.number().required("Phone not empty"),
+                    email: Yup.string().required("Email not empty")
+                        .matches("/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$","invalid email")
                 })}
-                onSubmit={(values, {setSubmitting}) => {
-                    setTimeout(() => {
-                        console.log(values)
-                    })
-                    setSubmitting(false)
-                }}
+                onSubmit={(values) => {
+                    console.log(values)
+                }}>
 
-
-            >
-                {
-                    ({isSubmitting}) => (
                         <div className="container">
                             <h1>Form medicine</h1>
                             <Form>
@@ -145,9 +127,9 @@ export default function form() {
                                                   className="text-danger"></ErrorMessage>
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="phonenumber" className="form-label">Số Điện Thoại</label>
-                                    <Field type='text' className="form-control" id="phonenumber" name="phonenumber"/>
-                                    <ErrorMessage name="phonenumber" component='span'
+                                    <label htmlFor="phone" className="form-label">Số Điện Thoại</label>
+                                    <Field type='text' className="form-control" id="phone" name="phone"/>
+                                    <ErrorMessage name="phone" component='span'
                                                   className="text-danger"></ErrorMessage>
                                 </div>
                                 <div className="form-group">
@@ -180,26 +162,11 @@ export default function form() {
                                     có biểu hiện (Sốt,Ho,Khó thở,Viêm Phổi)
                                     <ErrorMessage name="strong" component='span' className="text-danger"></ErrorMessage>
                                 </div>
-                                {
-                                    isSubmitting ?
-                                        <Dna
-                                            visible={true}
-                                            height="80"
-                                            width="80"
-                                            ariaLabel="dna-loading"
-                                            wrapperStyle={{}}
-                                            wrapperClass="dna-wrapper"
-                                        />
-                                        :
+                                <div className="form-group">
                                         <button type="submit" className="btn btn-primary">Submit</button>
-                                }
-
+                                </div>
                             </Form>
                         </div>
-
-                    )
-                }
-
             </Formik>
         </>
     )
