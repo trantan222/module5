@@ -18,7 +18,7 @@ export const addNew = async (value) =>{
 }
 export const FindById = async (id) =>{
     try{
-        const result =  await axios.get('http://localhost:8080/books/'+id)
+        const result =  await axios.get(URL+id)
         return result.data
     }catch (e){
         console.log(e)
