@@ -27,16 +27,16 @@ export  function Todolist() {
                 console.log(e)
             })
     }
-    const Change = (event) => {
-        setString(event.target.value)
-    }
+    // const Change = (event) => {
+    //     setString(event.target.value)
+    // }
 
     return (
         <div>
             <h1>Todo list</h1>
             <input
                 value={string}
-                onChange={Change}
+                onChange={event => setString(event.target.value)}
                 type="text"
             />
             <button onClick={AddTodo}>Submit</button>
