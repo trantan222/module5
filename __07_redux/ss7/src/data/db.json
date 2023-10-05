@@ -1,0 +1,139 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Nguyen Van A",
+      "gender": 1,
+      "languages": [
+        "JAVA",
+        "C#"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Nguyen Van B",
+      "gender": 0,
+      "languages": [
+        "JAVA"
+      ]
+    },
+    {
+      "name": "Nguyen Van C",
+      "age": "20",
+      "gender": "0",
+      "languages": [
+        "C#"
+      ],
+      "id": 3
+    },
+    {
+      "name": "HaiTT",
+      "age": "20",
+      "gender": "0",
+      "languages": [
+        "JAVA",
+        "REACTJS",
+        "C#"
+      ],
+      "id": 4
+    },
+    {
+      "name": "TrungDC",
+      "age": 18,
+      "gender": "1",
+      "languages": [
+        "JAVA",
+        "C#",
+        "ReactJS"
+      ],
+      "id": 5
+    },
+    {
+      "name": "HaiTT",
+      "age": 18,
+      "gender": "1",
+      "languages": [
+        "JAVA",
+        "C#",
+        "ReactJS"
+      ],
+      "id": 6
+    },
+    {
+      "name": "TienNVT",
+      "age": 18,
+      "gender": "1",
+      "languages": [
+        "JAVA",
+        "C#",
+        "ReactJS"
+      ],
+      "id": 7
+    },
+    {
+      "name": "HaiTT",
+      "age": 19,
+      "gender": "1",
+      "languages": [
+        "JAVA",
+        "C#",
+        "ReactJS"
+      ],
+      "id": 8
+    },
+    {
+      "name": "ChanhTV",
+      "age": 20,
+      "gender": "1",
+      "languages": [
+        "JAVA",
+        "C#"
+      ],
+      "id": 9
+    },
+    {
+      "name": "SonPM",
+      "age": 20,
+      "gender": "1",
+      "languages": [
+        "JAVA",
+        "C#",
+        "ReactJS"
+      ],
+      "id": 10
+    },
+    {
+      "name": "Kim Hieu",
+      "age": 20,
+      "gender": "1",
+      "languages": [
+        "JAVA",
+        "ReactJS"
+      ],
+      "id": 11
+    },
+    {
+      "name": "TrungDC",
+      "age": 30,
+      "gender": "1",
+      "languages": [
+        "C#",
+        "JAVA",
+        "ReactJS"
+      ],
+      "id": 12
+    },
+    {
+      "name": "TrungDC",
+      "age": 31,
+      "gender": "1",
+      "languages": [
+        "C#",
+        "JAVA",
+        "ReactJS"
+      ],
+      "id": 13
+    }
+  ],
+  "classrooms": []
+}
