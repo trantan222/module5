@@ -19,7 +19,7 @@ export function Create() {
         await LibraryService.addNew(values)
         console.log(values)
         navigate('/')
-        toast('this game so bad man')
+        toast(`this game so bad man`)
     }
 
     return (
