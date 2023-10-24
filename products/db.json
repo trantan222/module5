@@ -1,0 +1,186 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "category 1"
+    },
+    {
+      "id": 2,
+      "name": "category 2"
+    },
+    {
+      "id": 3,
+      "name": "category 3"
+    }
+  ],
+  "products": [
+    {
+      "name": "Iphone 15",
+      "quantity": 10,
+      "status": "còn hàng",
+      "date": "2023-10-04",
+      "categoryId": "3",
+      "id": 1
+    },
+    {
+      "name": "SamSung",
+      "quantity": 10,
+      "status": "hết hàng",
+      "date": "2023-10-12",
+      "categoryId": 2,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "LG",
+      "quantity": 10,
+      "status": "hàng chưa về",
+      "date": "30-11-2002",
+      "categoryId": 3
+    },
+    {
+      "id": 4,
+      "name": "Iphone 13",
+      "quantity": 101,
+      "status": "còn hàng",
+      "date": "2-1-2023",
+      "categoryId": 2
+    },
+    {
+      "name": "tanaaaaaaa1",
+      "quantity": "11111111",
+      "status": "còn hàng",
+      "date": "2023-10-23",
+      "categoryId": 3,
+      "id": 10
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "còn hàng",
+      "date": "2023-10-20",
+      "categoryId": 2,
+      "id": 11
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "hàng chưa về",
+      "date": "2023-10-20",
+      "categoryId": 3,
+      "id": 13
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "còn hàng",
+      "date": "2023-01-19",
+      "categoryId": 1,
+      "id": 14
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "hết hàng",
+      "date": "",
+      "categoryId": 2,
+      "id": 16
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "còn hàng",
+      "date": "2023-10-07",
+      "categoryId": 3,
+      "id": 18
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "còn hàng",
+      "date": "2023-10-26",
+      "categoryId": 2,
+      "id": 19
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "hết hàng",
+      "date": "2023-10-21",
+      "categoryId": "3",
+      "id": 24
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "hết hàng",
+      "date": "2023-10-10",
+      "categoryId": 1,
+      "id": 25
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "còn hàng",
+      "date": "2023-10-11",
+      "categoryId": 1,
+      "id": 27
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "còn hàng",
+      "date": "",
+      "categoryId": "2",
+      "id": 28
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "còn hàng",
+      "date": "",
+      "categoryId": 1,
+      "id": 29
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "còn hàng",
+      "date": "",
+      "categoryId": 1,
+      "id": 30
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "còn hàng",
+      "date": "",
+      "categoryId": "2",
+      "id": 31
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "hết hàng",
+      "date": "",
+      "categoryId": "3",
+      "id": 32
+    },
+    {
+      "name": "tan",
+      "quantity": 111,
+      "status": "hết hàng",
+      "date": "",
+      "categoryId": 1,
+      "id": 33
+    },
+    {
+      "name": "Iphone2",
+      "quantity": 111,
+      "status": "hàng chưa về",
+      "date": "2023-10-14",
+      "categoryId": 1,
+      "id": 34
+    }
+  ]
+}
