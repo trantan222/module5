@@ -18,23 +18,23 @@ export function Create() {
         setCategories(res);
     }
     const initValues = {
-        name: 'tan',
-        quantity: 111,
-        status: '',
-        date: '',
-        categoryId: 1
+        "code": "",
+        "name": "",
+        "quantity": 0,
+        "date": "",
+        "description" : "",
+        "cost" :"",
+        "categoryId": 1,
     }
     const validationSchema = Yup.object().shape({
+        code : Yup.string().required('code is required'),
         name: Yup.string().required('name is required '),
         quantity: Yup.number().required('quantity is required ').min(1, 'Quantity must be at least 1'),
-        status: Yup.string().required('status is required'),
-        // categoryId: Yup.number().required(' categoryId is required')
+        date : Yup.date().required('date is required'),
+        description : Yup.string().required('description is required'),
+        cost : Yup.string().required('cost is required'),
+        categoryId: Yup.number().required(' categoryId is required')
     });
-    const Submit = async (values) => {
-        console.log(values)
-        navigate('/')
-        toast(`Added !!!`)
-    }
     return (
         <>
             <Formik
@@ -51,32 +51,19 @@ export function Create() {
                 }}
             >
                 <div>
+                    <h1>Create</h1>
                     <Form>
+                        <div className="form-group">
+                            <label htmlFor="code">Code</label>
+                            <Field name='code' type="text" className="form-control" id="code"
+                                   placeholder="code"/>
+                            <ErrorMessage name='code' className='text-danger'></ErrorMessage>
+                        </div>
                         <div className="form-group">
                             <label htmlFor="name">Name</label>
                             <Field name='name' type="text" className="form-control" id="name"
                                    placeholder="name"/>
                             <ErrorMessage name='name' className='text-danger'></ErrorMessage>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="">Quantity</label>
-                            <Field name='quantity' type="text" className="form-control" id="quantity"
-                                   placeholder="Quantity"/>
-                            <ErrorMessage name='quantity' className='text-danger'></ErrorMessage>
-                        </div>
-                        <div className="form-group">
-                            <label>Status</label>
-                            <Field as="select" id="status" name="status" className="form-select" aria-label="Default select example">
-                                <option value="">Choose Status</option>
-                                <option value="còn hàng">còn hàng</option>
-                                <option value="hết hàng">hết hàng</option>
-                                <option value="hàng chưa về">hàng chưa về</option>
-                            </Field>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="">Date</label>
-                            <Field name='date' type="date" className="form-control" id="date"
-                                   placeholder="date"/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="categoryId">Category</label>
@@ -88,6 +75,32 @@ export function Create() {
                                 ))}
                             </Field>
                         </div>
+                        <div className="form-group">
+                            <label htmlFor="">Cost</label>
+                            <Field name='cost' type="text" className="form-control" id="cost"
+                                   placeholder="cost"/>
+                            <ErrorMessage name='cost' className='text-danger'></ErrorMessage>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="">Quantity</label>
+                            <Field name='quantity' type="text" className="form-control" id="quantity"
+                                   placeholder="Quantity"/>
+                            <ErrorMessage name='quantity' className='text-danger'></ErrorMessage>
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="">Date</label>
+                            <Field name='date' type="date" className="form-control" id="date"
+                                   placeholder="date"/>
+                            <ErrorMessage name='date' className='text-danger'></ErrorMessage>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="">Description</label>
+                            <Field name='description' type="text" className="form-control" id="description"
+                                   placeholder="description"/>
+                            <ErrorMessage name='description' className='text-danger'></ErrorMessage>
+                        </div>
+
                         <div className="form-group">
                             <button type="submit" className="btn btn-primary">Submit</button>
                             <NavLink to='/' className='btn btn-info'>Back</NavLink>

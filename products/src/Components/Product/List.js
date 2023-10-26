@@ -2,7 +2,6 @@ import {useEffect, useState} from "react";
 import * as ServiceProduct from "../../Service/ProductService"
 import * as ServiceCategory from "../../Service/CategoryService"
 import {NavLink} from "react-router-dom";
-import {Delete} from "./Delete";
 
 export function List() {
     const [Products, setProducts] = useState([])
@@ -10,9 +9,6 @@ export function List() {
     const [Search, setSearch] = useState('')
     const [filterProduct, setFilterProduct] = useState([])
     const [selectedCategory, setSelectedCategory] = useState('')
-    const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage, setItemsPerPage] = useState(5);
-    const [idDelete, setIdDelete] = useState(0);
 
 
     const FetchApi = async () => {
@@ -35,36 +31,16 @@ export function List() {
     }, [selectedCategory, Search, Products])
 
 
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = filterProduct.slice(indexOfFirstItem, indexOfLastItem);
-    const filteredBooks = Products.filter(product => product.name.includes(Search));
-    // Logic for displaying page numbers
-    const paginate = (pageNumber) => {
-        setCurrentPage(pageNumber);
-    }
-
-
-    const [isShowModalDelete, setIsShowModalDelete] = useState(false);
-    const handleClose = () => {
-        setIsShowModalDelete(false);
-    }
     useEffect(() => {
         FetchApi();
-    }, [isShowModalDelete]);
+    }, [Products]);
 
 
     return (
         <>
             <h1>
                 Products
-                <NavLink
-                    to="/create"
-                    style={{float: "right"}}
-                    className="btn btn-primary"
-                >
-                    Add
-                </NavLink>
+
             </h1>
             <label htmlFor="categories">Choose a category:</label>
             <select
@@ -72,7 +48,7 @@ export function List() {
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
             >
-                <option value="">ALl Categories</option>
+                <option value="">All Categories</option>
                 {Categories.map((category) =>(
                     <option key={category.id} value={category.id.toString()}>{category.name}</option>
                 ))}
@@ -82,64 +58,40 @@ export function List() {
             placeholder="Input Name"
             value={Search}
             onChange={event => setSearch(event.target.value)}/>
-            <table className="table table-info">
+            <NavLink
+                to="/create"
+                style={{float: "right"}}
+                className="btn btn-primary"
+            >
+                Add
+            </NavLink>
+            <table className="table table-warning">
                 <thead>
                 <tr>
-                    <th>Id</th>
+                    <th>STT</th>
+                    <th>Code</th>
                     <th>Name</th>
                     <th>Quantity</th>
                     <th>Date</th>
                     <th>Category</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th>Cost</th>
                 </tr>
                 </thead>
                 <tbody>
-                {currentItems.map((product => (
+                {filterProduct.map(((product,index) => (
                         <tr key={product.id}>
-                            <td>{product.id}</td>
+                            <td>{index + 1}</td>
+                            <td>{product.code}</td>
                             <td>{product.name}</td>
                             <td>{product.quantity}</td>
                             <td>{product.date}</td>
                             <td>{Categories.find((category) => category.id === Number(product.categoryId))?.name}</td>
-                            <td>{product.status}</td>
-                            <td>
-                                <NavLink className="btn btn-warning" to={`/update/${product.id}`}>
-                                    Edit
-                                </NavLink>{""}
-                                &nbsp;
-                                <button type="button" className="btn btn-danger"
-                                        onClick={() => {
-                                            setIdDelete(product.id)
-                                            setIsShowModalDelete(true)
-                                        }}>Delete
-                                </button>
-                            </td>
+                            <td>{product.cost}</td>
                         </tr>
                     ))
                 )}
                 </tbody>
             </table>
-            <nav>
-                <ul className="pagination justify-content-center">
-                    <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-                        <button className="page-link" onClick={() => paginate(currentPage - 1)}>Previous</button>
-                    </li>
-                    {Array.from({ length: Math.ceil(filteredBooks.length / itemsPerPage) }).map((_, index) => (
-                        <li key={index} className={`page-item ${index + 1 === currentPage ? 'active' : ''}`}>
-                            <button className="page-link" onClick={() => paginate(index + 1)}>{index + 1}</button>
-                        </li>
-                    ))}
-                    <li className={`page-item ${currentPage === Math.ceil(filteredBooks.length / itemsPerPage) ? 'disabled' : ''}`}>
-                        <button className="page-link" onClick={() => paginate(currentPage + 1)}>Next</button>
-                    </li>
-                </ul>
-            </nav>
-            <Delete
-                show={isShowModalDelete}
-                handleClose={handleClose}
-                id={idDelete}
-            />
         </>
     )
 }

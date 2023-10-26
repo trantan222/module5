@@ -2,185 +2,195 @@
   "categories": [
     {
       "id": 1,
-      "name": "category 1"
+      "name": "category 1",
+      "description": "đau đầu"
     },
     {
       "id": 2,
-      "name": "category 2"
+      "name": "category 2",
+      "description": "đau răng"
     },
     {
       "id": 3,
-      "name": "category 3"
+      "name": "category 3",
+      "description": "đau bụng"
+    },
+    {
+      "id": 4,
+      "name": "category 4",
+      "description": "ho "
     }
   ],
   "products": [
     {
-      "name": "Iphone 15",
+      "code": "PROD-001",
+      "name": "Product 1",
       "quantity": 10,
-      "status": "còn hàng",
       "date": "2023-10-04",
+      "description": "uống sáng",
+      "cost": "10000",
       "categoryId": "3",
       "id": 1
     },
     {
-      "name": "SamSung",
+      "code": "PROD-002",
+      "name": "Product 2",
       "quantity": 10,
-      "status": "hết hàng",
       "date": "2023-10-12",
+      "description": "uống trưa",
+      "cost": "10000",
       "categoryId": 2,
       "id": 2
     },
     {
       "id": 3,
-      "name": "LG",
+      "code": "PROD-003",
+      "name": "Product 3",
       "quantity": 10,
-      "status": "hàng chưa về",
       "date": "30-11-2002",
+      "description": "uống sáng",
+      "cost": "10000",
       "categoryId": 3
     },
     {
       "id": 4,
-      "name": "Iphone 13",
+      "code": "PROD-004",
+      "name": "Product 4",
       "quantity": 101,
-      "status": "còn hàng",
+      "description": "uống tối",
       "date": "2-1-2023",
+      "cost": "10000",
       "categoryId": 2
     },
     {
-      "name": "tanaaaaaaa1",
+      "code": "PROD-005",
+      "name": "Product 5",
       "quantity": "11111111",
-      "status": "còn hàng",
       "date": "2023-10-23",
+      "description": "uống sáng",
       "categoryId": 3,
+      "cost": "10000",
       "id": 10
     },
     {
-      "name": "tan",
+      "code": "PROD-006",
+      "name": "Product 6",
       "quantity": 111,
-      "status": "còn hàng",
       "date": "2023-10-20",
+      "description": "uống sáng",
       "categoryId": 2,
+      "cost": "10000",
       "id": 11
     },
     {
-      "name": "tan",
+      "code": "PROD-007",
+      "name": "Product 7",
       "quantity": 111,
-      "status": "hàng chưa về",
       "date": "2023-10-20",
+      "description": "uống tối",
       "categoryId": 3,
+      "cost": "10000",
       "id": 13
     },
     {
-      "name": "tan",
+      "code": "PROD-008",
+      "name": "Product 8",
       "quantity": 111,
-      "status": "còn hàng",
       "date": "2023-01-19",
+      "description": "uống 2 ngày 1 lần",
       "categoryId": 1,
+      "cost": "10000",
       "id": 14
     },
     {
-      "name": "tan",
+      "code": "PROD-0010",
+      "name": "Product 10",
       "quantity": 111,
-      "status": "hết hàng",
-      "date": "",
-      "categoryId": 2,
-      "id": 16
-    },
-    {
-      "name": "tan",
-      "quantity": 111,
-      "status": "còn hàng",
       "date": "2023-10-07",
       "categoryId": 3,
+      "description": "uống chiều",
+      "cost": "10000",
       "id": 18
     },
     {
-      "name": "tan",
-      "quantity": 111,
-      "status": "còn hàng",
-      "date": "2023-10-26",
-      "categoryId": 2,
+      "code": "aaa",
+      "name": "aaaaa",
+      "quantity": "1111",
+      "date": "2023-10-05",
+      "description": "uống sáng",
+      "cost": "99900.0",
+      "categoryId": "2",
       "id": 19
     },
     {
+      "code": "aaa",
       "name": "tan",
-      "quantity": 111,
-      "status": "hết hàng",
-      "date": "2023-10-21",
-      "categoryId": "3",
+      "quantity": "4",
+      "date": "2023-10-20",
+      "description": "new",
+      "cost": "99900.0",
+      "categoryId": "2",
+      "id": 20
+    },
+    {
+      "code": "aaa",
+      "name": "tan",
+      "quantity": "20",
+      "date": "2023-10-19",
+      "description": "new",
+      "cost": "99900.0",
+      "categoryId": "2",
+      "id": 21
+    },
+    {
+      "code": "aaa",
+      "name": "tan",
+      "quantity": "1",
+      "date": "2023-10-18",
+      "description": "11111",
+      "cost": "99900.0",
+      "categoryId": 1,
+      "id": 22
+    },
+    {
+      "code": "aaa",
+      "name": "tan",
+      "quantity": "1",
+      "date": "2023-10-11",
+      "description": "11111",
+      "cost": "99900.0",
+      "categoryId": 1,
+      "id": 23
+    },
+    {
+      "code": "P",
+      "name": "P",
+      "quantity": "1",
+      "date": "2023-10-12",
+      "description": "11111",
+      "cost": "99900.0",
+      "categoryId": "4",
       "id": 24
     },
     {
+      "code": "aaa",
       "name": "tan",
-      "quantity": 111,
-      "status": "hết hàng",
-      "date": "2023-10-10",
-      "categoryId": 1,
+      "quantity": "11",
+      "date": "2023-10-05",
+      "description": "111",
+      "cost": "99900.0",
+      "categoryId": "3",
       "id": 25
     },
     {
+      "code": "aaa",
       "name": "tan",
-      "quantity": 111,
-      "status": "còn hàng",
+      "quantity": "1",
       "date": "2023-10-11",
-      "categoryId": 1,
-      "id": 27
-    },
-    {
-      "name": "tan",
-      "quantity": 111,
-      "status": "còn hàng",
-      "date": "",
+      "description": "11111",
+      "cost": "99900.0",
       "categoryId": "2",
-      "id": 28
-    },
-    {
-      "name": "tan",
-      "quantity": 111,
-      "status": "còn hàng",
-      "date": "",
-      "categoryId": 1,
-      "id": 29
-    },
-    {
-      "name": "tan",
-      "quantity": 111,
-      "status": "còn hàng",
-      "date": "",
-      "categoryId": 1,
-      "id": 30
-    },
-    {
-      "name": "tan",
-      "quantity": 111,
-      "status": "còn hàng",
-      "date": "",
-      "categoryId": "2",
-      "id": 31
-    },
-    {
-      "name": "tan",
-      "quantity": 111,
-      "status": "hết hàng",
-      "date": "",
-      "categoryId": "3",
-      "id": 32
-    },
-    {
-      "name": "tan",
-      "quantity": 111,
-      "status": "hết hàng",
-      "date": "",
-      "categoryId": 1,
-      "id": 33
-    },
-    {
-      "name": "Iphone2",
-      "quantity": 111,
-      "status": "hàng chưa về",
-      "date": "2023-10-14",
-      "categoryId": 1,
-      "id": 34
+      "id": 26
     }
   ]
 }

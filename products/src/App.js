@@ -5,7 +5,6 @@ import {List} from "./Components/Product/List";
 import "react-toastify/dist/ReactToastify.css"
 import {ToastContainer} from "react-toastify";
 import {Create} from "./Components/Product/Create";
-import {Update} from "./Components/Product/Update";
 
 function App() {
   return (
@@ -13,8 +12,6 @@ function App() {
       <Routes>
         <Route path="/" element={<List/>}></Route>
         <Route path="/create" element={<Create/>}></Route>
-        <Route path="/update/:id" element={<Update/>}></Route>
-        {/*<Route path="/phonebook" element={<ListPhoneBook/>}></Route>*/}
       </Routes>
       <ToastContainer></ToastContainer>
       </>
