@@ -10,15 +10,12 @@ export function List() {
     const [filterProduct, setFilterProduct] = useState([])
     const [selectedCategory, setSelectedCategory] = useState('')
 
-
     const FetchApi = async () => {
         const result = await ServiceProduct.getAllProduct();
         const result2 = await ServiceCategory.getAllCategories();
         setCategories(result2)
         setProducts(result)
     }
-
-
     useEffect(() => {
         let filtered = Products;
         if (selectedCategory !== "") {
@@ -29,12 +26,28 @@ export function List() {
         }
         setFilterProduct(filtered)
     }, [selectedCategory, Search, Products])
-
-
     useEffect(() => {
         FetchApi();
-    }, [Products]);
+    }, []);
 
+    useEffect(() => {
+        // sort theo name...
+        const sortedProducts = Products.sort((a, b) => (a.name > b.name) ? 1 : -1);
+        // format date(dd-mm-yyyy)
+        const formattedProduct = sortedProducts.map(product => {
+            if (product.date) {
+                try {
+                    const dateObj = new Date(product.date);
+                    product.date = dateObj.toLocaleDateString('en-GB');
+                } catch (error) {
+                    console.log('invalid date')
+                }
+            }
+            return product;
+        })
+        setFilterProduct(formattedProduct)
+
+    }, [Products]);
 
     return (
         <>
@@ -49,15 +62,15 @@ export function List() {
                 onChange={(e) => setSelectedCategory(e.target.value)}
             >
                 <option value="">All Categories</option>
-                {Categories.map((category) =>(
+                {Categories.map((category) => (
                     <option key={category.id} value={category.id.toString()}>{category.name}</option>
                 ))}
             </select>
             <input
-            type ="text"
-            placeholder="Input Name"
-            value={Search}
-            onChange={event => setSearch(event.target.value)}/>
+                type="text"
+                placeholder="Input Name"
+                value={Search}
+                onChange={event => setSearch(event.target.value)}/>
             <NavLink
                 to="/create"
                 style={{float: "right"}}
@@ -65,7 +78,8 @@ export function List() {
             >
                 Add
             </NavLink>
-            <table className="table table-warning">
+            {filterProduct.length > 0  ? (
+            <table className="table table-striped">
                 <thead>
                 <tr>
                     <th>STT</th>
@@ -78,7 +92,7 @@ export function List() {
                 </tr>
                 </thead>
                 <tbody>
-                {filterProduct.map(((product,index) => (
+                {filterProduct.map(((product, index) => (
                         <tr key={product.id}>
                             <td>{index + 1}</td>
                             <td>{product.code}</td>
@@ -91,7 +105,7 @@ export function List() {
                     ))
                 )}
                 </tbody>
-            </table>
+            </table> ) : (<p>No product Founds, Please refill your search </p>)}
         </>
     )
 }

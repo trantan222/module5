@@ -27,10 +27,10 @@ export function Create() {
         "categoryId": 1,
     }
     const validationSchema = Yup.object().shape({
-        code : Yup.string().required('code is required'),
+        code : Yup.string().required('code is required').matches(/^PROD-/,'code must start with PROD-XXX'),
         name: Yup.string().required('name is required '),
-        quantity: Yup.number().required('quantity is required ').min(1, 'Quantity must be at least 1'),
-        date : Yup.date().required('date is required'),
+        quantity: Yup.number().required('quantity is required ').min(1, 'Quantity must be at least 1').integer('quantity must be integer'),
+        date : Yup.date().required('date is required').max(new Date(),'Date must be in the present or future'),
         description : Yup.string().required('description is required'),
         cost : Yup.string().required('cost is required'),
         categoryId: Yup.number().required(' categoryId is required')
